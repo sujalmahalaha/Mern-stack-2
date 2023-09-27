@@ -1,0 +1,36 @@
+.bg-custom {
+    background-color: rgb(255, 208, 0);
+    padding-top: 20px;
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.txt-head {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: smaller;
+    padding-left: 15px;
+    margin: 0 0 5px 0;
+}
+
+.hdr {
+    padding-bottom: 20px;
+}
+
+.img-cust {
+    width: 68.7%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}

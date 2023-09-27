@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date and Time</title>
+  <script>
+
+function showDate() {
+    let dateElement = document.getElementById('date');
+    let currentDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+    dateElement.textContent = `Current Date: ${currentDate}`;
+}
+
+function showTime() {
+    let timeElement = document.getElementById('time');
+    let currentTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', hour12: false });
+    timeElement.textContent = `Current Time: ${currentTime}`;
+}
+
+
+  </script>
+</head>
+<body>
+
+  <h1>Date and Time</h1>
+  <button onclick="showDate()">Show Date</button><br><br>
+  <button onclick="showTime()">Show Time</button><br><br>
+  <div id="date"></div>
+  <div id="time"></div>
+</body>
+</html>
+

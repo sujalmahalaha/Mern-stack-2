@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        Bootstrap Task 6
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="mx-auto w-50 mt-5">
+        <form class="needs-validation" novalidate>
+            <div class="mb-3 has-validation">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="inputName" required>
+                <div class="invalid-feedback">
+                    Name is required.
+                </div>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="inputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail1" required>
+                <div class="invalid-feedback">
+                    Email is required.
+                </div>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="inputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword1" required>
+                <div class="invalid-feedback">
+                    Password is required.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="inputHobbies" class="form-label">Hobbies</label>
+                <select class="form-select" aria-label="Default select example" id="inputHobbies" required>
+                    <option selected disabled value="">--select--</option>
+                    <option value="1">Reading</option>
+                    <option value="2">Writing</option>
+                    <option value="3">Coding</option>
+                    <option value="4">Singing</option>
+                    <option value="5">Dancing</option>
+                </select>
+                <div class="invalid-feedback">
+                    Hobbies is required.
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-danger w-100">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>

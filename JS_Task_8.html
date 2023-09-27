@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Javascript Task 11</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(#ecec47, #c35ae0);
+            height: screen;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-5 text-center" style="color: rgb(44, 60, 239);">Registration Form</h1>
+        <form id="registration-form" novalidate>
+            <div class="form-group row">
+                <label for="first-name" class="col-md-2 col-form-label">First Name</label>
+                <input type="text" class="form-control col-md-8" id="first-name" name="firstName" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="last-name" class="col-md-2 col-form-label">Last Name</label>
+                <input type="text" class="form-control col-md-8" id="last-name" name="lastName" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-md-2 col-form-label">Email</label>
+                <input type="email" class="form-control col-md-8" id="email" name="email" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-md-2 col-form-label">Password</label>
+                <input type="password" class="form-control col-md-8" id="password" name="password" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="confirm-password" class="col-md-2 col-form-label">Re-enter Password</label>
+                <input type="password" class="form-control col-md-8" id="confirm-password" name="confirmPassword"
+                    required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="gender" class="col-md-2 col-form-label">Gender</label>
+                <select class="form-control col-md-8" id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="age" class="col-md-2 col-form-label">Age</label>
+                <input type="number" class="form-control col-md-8" id="age" name="age" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-md-2 col-form-label">Phone Number</label>
+                <input type="tel" class="form-control col-md-8" id="phone" name="phone" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="address" class="col-md-2 col-form-label">Address</label>
+                <textarea class="form-control col-md-8" id="address" name="address" rows="3" required></textarea>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="state" class="col-md-2 col-form-label">State</label>
+                <input type="text" class="form-control col-md-8" id="state" name="state" required>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="country" class="col-md-2 col-form-label">Country</label>
+                <select class="form-control col-md-8" id="country" name="country" required>
+                    <option value="" selected disabled>Choose Your Country</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="china">China</option>
+                    <option value="japan">Japan</option>
+                </select>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <label for="language" class="col-md-2 col-form-label">Language</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="english" name="language" value="English">
+                    <label class="form-check-label" for="english">English</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="kannada" name="language" value="Kannada">
+                    <label class="form-check-label" for="kannada">Kannada</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="hindi" name="language" value="Hindi">
+                    <label class="form-check-label" for="hindi">Hindi</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="telugu" name="language" value="Telugu">
+                    <label class="form-check-label" for="telugu">Telugu</label>
+                </div>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <div class="form-check col-md-8">
+                    <input class="form-check-input" type="checkbox" id="declaration" name="declaration"
+                        onchange="toggleSubmit()" required>
+                    <label class="form-check-label" for="declaration">
+                        Hereby I declare all the given details are true
+                    </label>
+                </div>
+                <p>Log in to <u><a href="https://ethnus.com/" target="_blank">Ethnus</a></u> website</p>
+                <span class="error-message col-md-2"></span>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-10 offset-md-2">
+                    <button type="submit" class="btn btn-danger w-25 rounded-pill border border-2 border-dark"
+                        disabled>Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', validateForm);
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('first-name').value.trim();
+            const lastName = document.getElementById('last-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirm-password').value.trim();
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const country = document.getElementById('country').value.trim();
+            const language = document.querySelectorAll('input[name="language"]:checked');
+            const declaration = document.getElementById('declaration').checked;
+
+            const errorMessages = document.getElementsByClassName('error-message');
+            for (let i = 0; i < errorMessages.length; i++) {
+                errorMessages[i].textContent = '';
+            }
+
+            let hasError = false;
+
+            if (firstName === '') {
+                displayErrorMessage('first-name', 'POOR');
+                hasError = true;
+            }
+
+            if (lastName === '') {
+                displayErrorMessage('last-name', 'POOR');
+                hasError = true;
+            }
+
+            if (email === '') {
+                displayErrorMessage('email', 'POOR');
+                hasError = true;
+            }
+
+            if (password === '') {
+                displayErrorMessage('password', 'POOR');
+                hasError = true;
+            }
+
+            if (confirmPassword === '') {
+                displayErrorMessage('confirm-password', 'POOR OR MISMATCH');
+                hasError = true;
+            } else if (password !== confirmPassword) {
+                displayErrorMessage('confirm-password', 'POOR OR MISMATCH');
+                hasError = true;
+            }
+
+            if (gender === '') {
+                displayErrorMessage('gender', 'POOR');
+                hasError = true;
+            }
+
+            if (age === '') {
+                displayErrorMessage('age', 'POOR');
+                hasError = true;
+            }
+
+            if (phone === '') {
+                displayErrorMessage('phone', 'POOR');
+                hasError = true;
+            }
+
+            if (address === '') {
+                displayErrorMessage('address', 'POOR');
+                hasError = true;
+            }
+
+            if (state === '') {
+                displayErrorMessage('state', 'POOR');
+                hasError = true;
+            }
+
+            if (country === '') {
+                displayErrorMessage('country', 'POOR');
+                hasError = true;
+            }
+
+            if (language.length === 0) {
+                displayErrorMessage('language', 'POOR');
+                hasError = true;
+            }
+
+            if (!declaration) {
+                displayErrorMessage('declaration', 'POOR');
+                hasError = true;
+            }
+
+            if (!hasError) {
+                console.log('Form submitted!');
+            }
+        }
+
+        function toggleSubmit() {
+            const submitButton = document.querySelector('button[type="submit"]');
+            submitButton.disabled = !submitButton.disabled;
+        }
+
+        function displayErrorMessage(inputId, message) {
+            const errorMessage = document.querySelector(`#${inputId} + .error-message`);
+            errorMessage.textContent = message;
+        }
+    </script>
+</body>
+
+</html>

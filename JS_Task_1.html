@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Number</title>
+</head>
+<body>
+    <h1>Reverse Number Example</h1>
+
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput">
+    <button onclick="reverseAndDisplay()">Reverse</button>
+
+    <div id="result"></div>
+
+    <script>
+        function reverseNumber(num) {
+            let reversed = 0;
+            while (num > 0) {
+                reversed = reversed * 10 + (num % 10);
+                num = Math.floor(num / 10);
+            }
+            return reversed;
+        }
+
+        function reverseAndDisplay() {
+            let inputElement = document.getElementById('numberInput');
+            let resultElement = document.getElementById('result');
+
+            let inputValue = parseInt(inputElement.value);
+            let reversedValue = reverseNumber(inputValue);
+
+            resultElement.textContent = `Reversed number: ${reversedValue}`;
+        }
+    </script>
+</body>
+</html>

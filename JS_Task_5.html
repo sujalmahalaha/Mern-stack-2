@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Javascript Task 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 100px; margin-left: 300px;">
+        <form action="#">
+            Name: <input type="text" id="inName" onclick="removeRedName()"> <span id="errname"></span> <br /><br />
+            Email: <input type="email" id="inEmail" onclick="removeRedEmail()"> <span id="erremail"></span> <br /><br />
+            Website: <input type="text" id="inWebsite" onclick="removeRedWebsite()"> <span id="errwebsite"></span> <br /><br />
+            Message: <textarea name="mes" id="inMsg" cols="30" rows="3" onclick="removeRedMsg()"></textarea> <span id="errmsg"></span>
+            <br /><br />
+            <input type="submit" value="Submit" onclick="return validate()">
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            var name = document.getElementById("inName").value;
+            var email = document.getElementById("inEmail").value;
+            var website = document.getElementById("inWebsite").value;
+            var msg = document.getElementById("inMsg").value;
+
+            var flag = true;
+
+            if (name == "") {
+                document.getElementById("errname").innerHTML = "This field is required";
+                addRedName();
+                flag = false;
+            }
+            if (email == "") {
+                document.getElementById("erremail").innerHTML = "A valid Email address is required";
+                addRedEmail();
+                flag = false;
+            }
+            if (email.indexOf("@") == -1) {
+                document.getElementById("erremail").innerHTML = "A valid Email address is invalid";
+                addRedEmail();
+                flag = false;
+            }
+            if (website == "") {
+                document.getElementById("errwebsite").innerHTML = "A valid URL is required";
+                addRedWebsite();
+                flag = false;
+            }
+            if (website.indexOf(".") == -1) {
+                document.getElementById("errwebsite").innerHTML = "A valid URL is invalid";
+                addRedWebsite();
+                flag = false;
+            }
+            if (msg == "") {
+                document.getElementById("errmsg").innerHTML = "This field is required";
+                addRedMsg();
+                flag = false;
+            }
+            return flag;
+        }
+        function addRedName() {
+            document.getElementById("inName").style.borderColor = "red";
+        }
+        function removeRedName() {
+            document.getElementById("inName").style.borderColor = "black";
+        }
+        function addRedEmail() {
+            document.getElementById("inEmail").style.borderColor = "red";
+        }
+        function removeRedEmail() {
+            document.getElementById("inEmail").style.borderColor = "black";
+        }
+        function addRedWebsite() {
+            document.getElementById("inWebsite").style.borderColor = "red";
+        }
+        function removeRedWebsite() {
+            document.getElementById("inWebsite").style.borderColor = "black";
+        }
+        function addRedMsg() {
+            document.getElementById("inMsg").style.borderColor = "red";
+        }
+        function removeRedMsg() {
+            document.getElementById("inMsg").style.borderColor = "black";
+        }
+
+    </script>
+</body>
+
+</html>

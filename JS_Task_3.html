@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication and Division Calculator</title>
+</head>
+<body>
+    <h1>Multiplication and Division Calculator</h1>
+
+    <form>
+        <label for="number1">1st Number:</label>
+        <input type="number" id="number1"><br><br>
+
+        <label for="number2">2nd Number:</label>
+        <input type="number" id="number2"><br><br>
+
+        <button type="button" onclick="multiply()">Multiply</button>&nbsp;&nbsp;
+        <button type="button" onclick="divide()">Divide</button><br>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        function multiply() {
+            let number1 = parseFloat(document.getElementById('number1').value);
+            let number2 = parseFloat(document.getElementById('number2').value);
+
+            let multiplicationResult = number1 * number2;
+
+            displayResult(`Multiplication Result: ${multiplicationResult}`);
+        }
+
+        function divide() {
+            let number1 = parseFloat(document.getElementById('number1').value);
+            let number2 = parseFloat(document.getElementById('number2').value);
+
+            if (number2 !== 0) {
+                let divisionResult = number1 / number2;
+                displayResult(`Division Result: ${divisionResult}`);
+            } else {
+                displayResult('Error: Division by zero');
+            }
+        }
+
+        function displayResult(result) {
+            let resultsElement = document.getElementById('results');
+            resultsElement.innerHTML = `<p>${result}</p>`;
+        }
+    </script>
+</body>
+</html>
